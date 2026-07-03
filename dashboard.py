@@ -1462,7 +1462,8 @@ function copyAlignOffset(btn) {
    Table rows (class .lap-sel-row) ARE the selection controls.
 */
 var _sLS = {}, _sBV = {}, _sGV = {};
-var _sLC = ['#E8002D','#0090D0','#FF8000','#00D2BE','#9B59B6','#39B54A','#FF87BC','#B6BABD'];
+// Selection colours — red (#E8002D) deliberately excluded; that's reserved for the best lap
+var _sLC = ['#0090D0','#FF8000','#00D2BE','#9B59B6','#39B54A','#FF87BC','#F5C518','#B6BABD'];
 
 function _bestVisible(cid) { return _sBV.hasOwnProperty(cid) ? _sBV[cid] : true; }
 function _gradOn(cid)      { return _sGV.hasOwnProperty(cid) ? _sGV[cid] : true; }
