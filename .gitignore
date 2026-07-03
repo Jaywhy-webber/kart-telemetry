@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 _tmp_matches.txt
+*.png
+CLAUDE.md
+AUDIT_REPORT.md

@@ -50,25 +50,25 @@ pip install pandas numpy plotly requests Pillow scipy
 
 ```bash
 # Single driver
-python dashboard.py Jamie.csv
+python dashboard.py driver_a.csv
 
 # Head-to-head (two or more drivers)
-python dashboard.py Jamie.csv Joshua.csv
+python dashboard.py driver_a.csv driver_b.csv
 
 # Custom sector count (default 6)
-python dashboard.py Jamie.csv --sectors 8
+python dashboard.py driver_a.csv --sectors 8
 
 # GPS-only lap detection (no beacon data in file)
-python dashboard.py Jamie.csv --no-beacon
+python dashboard.py driver_a.csv --no-beacon
 
 # Bake in a known GPS/satellite offset
-python dashboard.py Jamie.csv --lat-offset 0.000135 --lon-offset -0.000090
+python dashboard.py driver_a.csv --lat-offset 0.000135 --lon-offset -0.000090
 
 # Auto-detect GPS/satellite offset
-python dashboard.py Jamie.csv --auto-align
+python dashboard.py driver_a.csv --auto-align
 ```
 
-The output is a single self-contained HTML file (e.g. `Jamie_dashboard.html` or `Jamie_vs_Joshua_Tan_dashboard.html`) written to the same directory as the CSVs. Satellite tile images are embedded as base64 JPEG — the file works fully offline after generation. An internet connection is only required during the build step to download tiles.
+The output is a single self-contained HTML file (e.g. `driver_a_dashboard.html` or `driver_a_vs_driver_b_dashboard.html`) written to the same directory as the CSVs. Satellite tile images are embedded as base64 JPEG — the file works fully offline after generation. An internet connection is only required during the build step to download tiles.
 
 ---
 
@@ -183,8 +183,8 @@ GPS odometry drifts per lap. Normalising per-lap prevents cumulative distance er
 `kart_telemetry.py` is the pure analysis layer with no UI dependencies:
 
 ```bash
-python kart_telemetry.py Jamie.csv            # solo report
-python kart_telemetry.py Jamie.csv Joshua.csv # head-to-head
+python kart_telemetry.py driver_a.csv                   # solo report
+python kart_telemetry.py driver_a.csv driver_b.csv      # head-to-head
 ```
 
 ### Data flow
